@@ -37,9 +37,13 @@
                 class="form-control mb-2"
                 value="{{ $nota->description }}"
             >
-            <button class="btn btn-success btn-block" type="submit">
-            	Guardar
-            </button>
+            <div class="btn-group pt-3">
+
+                <a href="/" class="btn btn-outline-success">Volver</a>
+                <button class="btn btn-primary btn-success" type="submit">
+        	       Guardar
+                </button>
+            </div>
         </form>
     </div>
 @endsection

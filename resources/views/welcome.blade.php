@@ -15,6 +15,8 @@
         <div class="pb-4">
             <form action="{{ route('notas.crear') }}" method="POST">
                 @csrf
+
+                {{-- validaciones de formulario crear --}}
                 @error('nombre')
                     <div class="alert alert-danger">
                         El nombre es requerido.
@@ -25,6 +27,7 @@
                         La descripción es requerida.
                     </div>
                 @enderror
+
                 <input name="nombre"{{-- todos los imput deben llevar el mismo nombre que en la DB por convención y no estar confundido --}}
                     type="text"
                     placeholder="Nombre"
@@ -37,9 +40,11 @@
                     class="form-control mb-2"
                     value="{{ old('description') }}"
                 >
-                <button class="btn btn-primary btn-block btn-dark" type="submit">
-                    Agregar
-                </button>
+                <div class="text-center mt-4 mb-5">
+                    <button class="btn btn-primary btn-success" type="submit">
+                        Agregar
+                    </button>
+                </div>
             </form>
         </div>
         {{-- Tabla --}}
@@ -76,16 +81,15 @@
                                     href="{{ route('notas.editar', $item) }}">
                                         Editar
                                 </a>
-
-    <form class="d-inline"
-        action="{{ route('notas.eliminar', $item) }}"
-        method="POST">
-            @method('DELETE') {{--Método para eliminar.--}}
-            @csrf
-            <button class="btn btn-danger btn-sm" type="submit">
-                Eliminar
-            </button>
-    </form>
+                                <form class="d-inline"
+                                    action="{{ route('notas.eliminar', $item) }}"
+                                    method="POST">
+                                        @method('DELETE') {{--Método para eliminar.--}}
+                                        @csrf
+                                        <button class="btn btn-danger btn-sm" type="submit">
+                                            Eliminar
+                                        </button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach {{-- Cerrando el ciclo @foreach --}}

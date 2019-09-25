@@ -18,7 +18,7 @@
   <body>
     <div class="container links my-5">
       <div class="mb-3">
-        <a class="p-2" href="/">Inicio</a>
+        <a class="p-2" href="/">Notas</a>
         <a class="p-1" href="{{ route('foto') }}">Fotos</a>
         <a class="p-1" href="{{ route('noticias') }}">Blog</a>
         <a class="p-1" href="{{ route('nosotros') }}">nosotros</a>
