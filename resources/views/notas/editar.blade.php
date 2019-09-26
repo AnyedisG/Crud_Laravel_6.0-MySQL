@@ -38,8 +38,9 @@
                 value="{{ $nota->description }}"
             >
             <div class="btn-group pt-3">
-
+                {{--Botón volver--}}
                 <a href="/" class="btn btn-outline-success">Volver</a>
+                {{--Botón guardar--}}
                 <button class="btn btn-primary btn-success" type="submit">
         	       Guardar
                 </button>
